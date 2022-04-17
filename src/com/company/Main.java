@@ -20,10 +20,12 @@ public class Main {
             System.out.println("key = " + key + "  value = " + value);
         }
 
-        for (MapIterator it = new MapIterator(map); it.hasNext(); ) {
-            Map.Entry entry = (Map.Entry)it.next();
-            Object key = entry.getKey();
-            Object value = entry.getValue();
+        System.out.println();
+
+        for (var it = new MapIterator<Map.Entry<Integer, String>>(map); it.hasNext(); ) {
+            Map.Entry<Integer, String> entry = it.next();
+            Integer key = entry.getKey();
+            String value = entry.getValue();
             System.out.println("key = " + key + "  value = " + value);
         }
     }
